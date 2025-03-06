@@ -1,19 +1,18 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "rocker/r-ver:4.3.1",  // Use R-specific Docker image
   "hostRequirements": {
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
+  "updateContentCommand": "Rscript install.R",
   "customizations": {
     "codespaces": {
-      "openFiles": []
+      "openFiles": ["notebooks/tcga_analysis.ipynb"]
     },
     "vscode": {
       "extensions": [
         "ms-toolsai.jupyter",
-        "ms-python.python"
+        "Ikuyadeu.r"
       ]
     }
   }
